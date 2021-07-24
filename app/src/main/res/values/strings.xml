@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MemoryExercise</string>
+    <string name="tips">请输入需要搜索的内容</string>
+    <string name="search">搜索</string>
+    <string name="number_code">数字编码</string>
+    <string name="letter_code">字母编码</string>
+    <string name="auto_play">自动播放</string>
+    <string name="pause">暂停</string>
+    <string name="point_five_rate">0.5X</string>
+    <string name="point_seventy_five_rate">0.75X</string>
+    <string name="one_rate">1.0X</string>
+    <string name="one_point_twenty_five_rate">1.25X</string>
+    <string name="one_point_five_rate">1.5X</string>
+    <string name="one_point_seventy_five_rate">1.75X</string>
+    <string name="two_rate">2.0X</string>
+    <string name="open_random_play">开始随机自动播放</string>
+    <string name="close_random_play">关闭随机自动播放</string>
+</resources>

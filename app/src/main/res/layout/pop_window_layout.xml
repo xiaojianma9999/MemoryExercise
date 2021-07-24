@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@color/popWindowColor"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/point_five"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:clickable="true"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:text="@string/point_five_rate" />
+
+    <TextView
+        android:id="@+id/point_seventy_five"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:focusable="true"
+        android:clickable="true"
+        android:textSize="20dp"
+        android:text="@string/point_seventy_five_rate" />
+
+    <TextView
+        android:id="@+id/one"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:textSize="20dp"
+        android:text="@string/one_rate" />
+
+    <TextView
+        android:id="@+id/one_point_twenty_five"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:textSize="20dp"
+        android:text="@string/one_point_twenty_five_rate" />
+
+    <TextView
+        android:id="@+id/one_point_five"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:textSize="20dp"
+        android:text="@string/one_point_five_rate" />
+
+    <TextView
+        android:id="@+id/one_point_seventy_five"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:textSize="20dp"
+        android:text="@string/one_point_seventy_five_rate" />
+
+    <TextView
+        android:id="@+id/two"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:text="@string/two_rate" />
+</LinearLayout>

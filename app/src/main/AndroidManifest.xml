@@ -9,7 +9,7 @@
         android:roundIcon="@drawable/yepeng"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,11 +17,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NumberCodeActivity"
+            android:name=".activity.NumberCodeActivity"
             android:label="数字编码"
             android:theme="@style/Widget.AppCompat.ActionBar"></activity>
         <activity
-            android:name=".LetterCodeActivity"
+            android:name=".activity.LetterCodeActivity"
             android:label="字母编码"></activity>
     </application>
 

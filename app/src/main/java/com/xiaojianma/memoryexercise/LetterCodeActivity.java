@@ -8,36 +8,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.xiaojianma.memoryexercise.utils.DataUtils;
+
 public class LetterCodeActivity extends BaseActivity {
 
     private static final String TAG = "MainActivity";
 
-    private String[] data = {"A a——苹果；海军帽",
-            "B b——笔；爸",
-            "C c——月亮",
-            "D d——弓；弟",
-            "E e——鹅；饿；姨",
-            "F f——父；斧",
-            "G g——哥；鸽",
-            "H h——椅子；喝",
-            "I i——蜡烛；爱",
-            "J j——钩子",
-            "K k——机枪",
-            "L l——棒；棍；长",
-            "M m——麦当劳；",
-            "N n——门；泥；你",
-            "O o——圆、太阳、蛋",
-            "P p——旗；皮",
-            "Q q——球；企鹅",
-            "R r——人；小草；",
-            "S s——蛇；师；是",
-            "T  t——伞把； 踢、题、提、体；",
-            "U u——杯子；油；有",
-            "V v——山谷；胜利",
-            "W w—— 屋；乌；雾；巫",
-            "X  x——剪刀；错误",
-            "Y y——撑衣杆；药",
-            "Z z——闪电；子"};
+    private String[] data = DataUtils.getLetterData();
 
     // TTS对象
     private TextToSpeech mTextToSpeech;

@@ -70,9 +70,11 @@ public class LetterCodeActivity extends BaseActivity {
                 int index = 0;
                 while (!pauseAutoPlay) {
                     index %= playSize;
-                    speechText(data[index]);
+                    String text = data[index];
+                    speechText(text);
+                    int sleepTime = text.length() > 12 ? 5000 : 3000;
                     try {
-                        Thread.sleep(3000);
+                        Thread.sleep(sleepTime);
                     } catch (InterruptedException e) {
                         Log.e(TAG, "run: autoPlay()" + e.toString());
                     }
@@ -94,9 +96,11 @@ public class LetterCodeActivity extends BaseActivity {
                 int index;
                 while (!pauseRandomPlay) {
                     index = random.nextInt(playSize);
-                    speechText(data[index]);
+                    String text = data[index];
+                    speechText(text);
+                    int sleepTime = text.length() > 12 ? 5000 : 3000;
                     try {
-                        Thread.sleep(3000);
+                        Thread.sleep(sleepTime);
                     } catch (InterruptedException e) {
                         Log.e(TAG, "run: randomPlay()" + e.toString());
                     }

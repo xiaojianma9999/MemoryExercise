@@ -139,8 +139,10 @@ public class NumberCodeActivity extends BaseActivity {
 //                        }
                         index %= playSize;
                         viewPager.setCurrentItem(index);
+                        int length = list.get(index).getNumberText().length();
+                        int sleepTime = length > 12 ? 5000 : 3000;
                         try {
-                            Thread.sleep(3000);
+                            Thread.sleep(sleepTime);
                         } catch (InterruptedException e) {
                             Log.e(TAG, "run: autoPlay()" + e.toString());
                         }
@@ -179,8 +181,10 @@ public class NumberCodeActivity extends BaseActivity {
                         index = random.nextInt(playSize);
 //                        index %= playSize;
                         viewPager.setCurrentItem(index);
+                        int length = list.get(index).getNumberText().length();
+                        int sleepTime = length > 12 ? 5000 : 3000;
                         try {
-                            Thread.sleep(3000);
+                            Thread.sleep(sleepTime);
                         } catch (InterruptedException e) {
                             Log.e(TAG, "run: randomPlay()" + e.toString());
                         }

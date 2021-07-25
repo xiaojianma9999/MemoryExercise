@@ -2,6 +2,8 @@ package com.xiaojianma.memoryexercise.activity;
 
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,6 +12,9 @@ import android.widget.ListView;
 
 import com.xiaojianma.memoryexercise.R;
 import com.xiaojianma.memoryexercise.utils.DataUtils;
+
+import java.util.Random;
+import java.util.concurrent.Callable;
 
 public class LetterCodeActivity extends BaseActivity {
 
@@ -54,5 +59,51 @@ public class LetterCodeActivity extends BaseActivity {
                 return false;
             }
         });
+    }
+
+    protected void autoPlay(MenuItem item) {
+        super.autoPlay(item);
+        Callable<Boolean> callable = new Callable<Boolean>() {
+            @Override
+            public Boolean call() {
+                int playSize = data.length;
+                int index = 0;
+                while (!pauseAutoPlay) {
+                    index %= playSize;
+                    speechText(data[index]);
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        Log.e(TAG, "run: autoPlay()" + e.toString());
+                    }
+                    index++;
+                }
+                return Boolean.TRUE;
+            }
+        };
+        service.submit(callable);
+    }
+
+    protected void randomPlay(MenuItem item) {
+        super.randomPlay(item);
+        Callable<Boolean> callable = new Callable<Boolean>() {
+            @Override
+            public Boolean call() {
+                int playSize = data.length;
+                Random random = new Random();
+                int index;
+                while (!pauseRandomPlay) {
+                    index = random.nextInt(playSize);
+                    speechText(data[index]);
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        Log.e(TAG, "run: randomPlay()" + e.toString());
+                    }
+                }
+                return Boolean.TRUE;
+            }
+        };
+        service.submit(callable);
     }
 }

@@ -22,7 +22,8 @@
             android:theme="@style/Widget.AppCompat.ActionBar"></activity>
         <activity
             android:name=".activity.LetterCodeActivity"
-            android:label="字母编码"></activity>
+            android:label="字母编码"
+            android:theme="@style/Widget.AppCompat.ActionBar"></activity>
     </application>
 
 </manifest>

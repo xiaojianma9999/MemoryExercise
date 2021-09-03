@@ -3,7 +3,9 @@ package com.xiaojianma.memoryexercise.activity;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.Gravity;
@@ -60,9 +62,15 @@ public class BaseActivity extends Activity implements TextToSpeech.OnInitListene
 
     protected Menu menu;
 
+    // 电源管理锁
+    protected PowerManager.WakeLock wakeLock;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        PowerManager pm = (PowerManager)getSystemService(Context.POWER_SERVICE);
+        PowerManager.WakeLock wakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, this.getLocalClassName());
+        wakeLock.acquire();
         initTextToSpeech();
     }
 
@@ -83,6 +91,9 @@ public class BaseActivity extends Activity implements TextToSpeech.OnInitListene
             mTextToSpeech = null;
         }
         service.shutdownNow();
+        if (wakeLock != null) {
+            wakeLock.release();
+        }
         super.onDestroy();
     }
 
